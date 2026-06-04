@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "Real-time multi-agent monitoring dashboard for Claude Code",
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "pnpm@10.34.1",
   "scripts": {
     "dev": "concurrently \"pnpm run dev:server\" \"pnpm run dev:dashboard\"",
     "dev:server": "pnpm --filter @agentpulse/server run dev",
