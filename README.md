@@ -414,6 +414,44 @@ The system has built-in deduplication using event IDs. If you see duplicates:
 1. Check that you're not running multiple server instances
 2. Verify event IDs are unique (format: `timestamp-random`)
 
+## Testing
+
+AgentPulse has a comprehensive test suite including unit tests, integration tests, and E2E tests.
+
+### Quick Start
+
+```bash
+# Run all tests
+npm test
+
+# Run with coverage
+npm run test:coverage
+
+# Run specific test types
+npm run test:unit          # Unit tests only
+npm run test:integration   # Integration tests only
+npm run test:e2e           # E2E tests only
+```
+
+### Test Structure
+
+- **Unit Tests**: `packages/*/src/**/*.test.ts` - Test individual modules
+- **Integration Tests**: `packages/server/src/api.test.ts` - Test API endpoints
+- **Component Tests**: `packages/dashboard/src/components/__tests__/*.tsx` - Test React components
+- **E2E Tests**: `tests/e2e/**/*.spec.ts` - Test full application flow
+
+### Running Tests in Watch Mode
+
+For development, run tests in watch mode to automatically re-run on file changes:
+
+```bash
+cd packages/shared && npx vitest
+cd packages/server && npx vitest
+cd packages/dashboard && npx vitest
+```
+
+See [TESTING.md](./TESTING.md) for detailed testing documentation.
+
 ## Development
 
 ### Project Structure

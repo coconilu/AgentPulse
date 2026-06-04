@@ -3,3 +3,12 @@ dist/
 *.js.map
 .env
 .DS_Store
+
+# Test coverage
+coverage/
+playwright-report/
+test-results/
+
+# Build artifacts
+*.tgz
+*.d.ts
