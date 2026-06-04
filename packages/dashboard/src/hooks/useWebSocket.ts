@@ -4,7 +4,7 @@ import type { WSMessage } from '../types';
 
 export function useWebSocket() {
   const wsRef = useRef<WebSocket | null>(null);
-  const reconnectTimer = useRef<ReturnType<typeof setTimeout>>();
+  const reconnectTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const backoff = useRef(1000);
 
   const { setInitialState, handleSessionUpdate, handleEvent, setWsConnected } =
