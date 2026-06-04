@@ -1,0 +1,80 @@
+{
+  "hooks": {
+    "SubagentStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["~/.agentpulse/hook/agentpulse-hook.js"],
+            "async": true
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["~/.agentpulse/hook/agentpulse-hook.js"],
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["~/.agentpulse/hook/agentpulse-hook.js"],
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["~/.agentpulse/hook/agentpulse-hook.js"],
+            "async": true
+          }
+        ]
+      }
+    ],
+    "TaskCreated": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["~/.agentpulse/hook/agentpulse-hook.js"],
+            "async": true
+          }
+        ]
+      }
+    ],
+    "TaskCompleted": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["~/.agentpulse/hook/agentpulse-hook.js"],
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}

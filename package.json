@@ -1,0 +1,23 @@
+{
+  "name": "agentpulse",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Real-time multi-agent monitoring dashboard for Claude Code",
+  "workspaces": [
+    "packages/shared",
+    "packages/hook",
+    "packages/server",
+    "packages/dashboard"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:dashboard\"",
+    "dev:server": "npm run dev --workspace=packages/server",
+    "dev:dashboard": "npm run dev --workspace=packages/dashboard",
+    "build": "npm run build --workspaces",
+    "build:hook": "npm run build --workspace=packages/hook"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "typescript": "^5.7.0"
+  }
+}

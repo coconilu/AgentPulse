@@ -1,0 +1,13 @@
+{
+  "name": "@agentpulse/hook",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/agentpulse-hook.ts --bundle --platform=node --target=node18 --outfile=dist/agentpulse-hook.js --format=esm --banner:js=\"#!/usr/bin/env node\"",
+    "install-hook": "node scripts/install.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}
