@@ -4,6 +4,10 @@ dist/
 .env
 .DS_Store
 
+# pnpm
+pnpm-lock.yaml
+.pnpm-store/
+
 # Test coverage
 coverage/
 playwright-report/

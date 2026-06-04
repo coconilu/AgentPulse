@@ -51,17 +51,26 @@ Claude Code TUI cannot effectively display sub-agent work. AgentPulse solves thi
 
 ## Installation
 
+**Prerequisites**: [pnpm](https://pnpm.io/) 9.15+ (recommended) or npm
+
 ```bash
 # Clone repository
 git clone https://github.com/your-org/agentpulse.git
 cd agentpulse
 
-# Install dependencies
+# Install dependencies with pnpm (recommended)
+pnpm install
+
+# Or with npm
 npm install
 
 # Build hook script (optional, for production use)
+pnpm run build:hook
+# or
 npm run build:hook
 ```
+
+> **Note**: This project uses pnpm workspaces for faster dependency management and better disk efficiency. See [PNPM_QUICK_REFERENCE.md](./PNPM_QUICK_REFERENCE.md) for common commands.
 
 ## Quick Start
 
@@ -70,6 +79,8 @@ npm run build:hook
 Start both server and dashboard:
 
 ```bash
+pnpm run dev
+# or
 npm run dev
 ```
 
