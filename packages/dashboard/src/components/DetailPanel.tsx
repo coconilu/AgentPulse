@@ -77,7 +77,7 @@ export function DetailPanel() {
       </div>
 
       {/* Scrollable content */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="custom-scrollbar flex-1 overflow-y-auto p-4 space-y-4">
         {/* Last assistant message */}
         {agent.last_assistant_message && (
           <section>
@@ -151,7 +151,7 @@ function ToolCallDetail({ call }: { call: ToolCallView }) {
             <h5 className="text-[10px] font-semibold text-gray-500 uppercase mb-1">
               Input
             </h5>
-            <pre className="text-xs text-gray-400 bg-gray-950 rounded p-2 border border-gray-800 overflow-x-auto">
+            <pre className="custom-scrollbar text-xs text-gray-400 bg-gray-950 rounded p-2 border border-gray-800 overflow-x-auto">
               {JSON.stringify(call.tool_input, null, 2)}
             </pre>
           </div>
@@ -162,7 +162,7 @@ function ToolCallDetail({ call }: { call: ToolCallView }) {
               <h5 className="text-[10px] font-semibold text-gray-500 uppercase mb-1">
                 Response
               </h5>
-              <pre className="text-xs text-gray-400 bg-gray-950 rounded p-2 border border-gray-800 overflow-x-auto max-h-64">
+              <pre className="custom-scrollbar text-xs text-gray-400 bg-gray-950 rounded p-2 border border-gray-800 overflow-x-auto max-h-64">
                 {typeof call.tool_response === 'string'
                   ? call.tool_response.length > 2000
                     ? call.tool_response.slice(0, 2000) + '\n... (truncated)'

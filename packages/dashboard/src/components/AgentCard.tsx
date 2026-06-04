@@ -48,6 +48,7 @@ export function AgentCard({ agent }: AgentCardProps) {
 
   const isExpanded = expandedAgents.has(agent.agent_id);
   const isSelected = selectedAgentId === agent.agent_id;
+  const toggleExpanded = () => toggleAgentExpanded(agent.agent_id);
 
   return (
     <div
@@ -58,10 +59,25 @@ export function AgentCard({ agent }: AgentCardProps) {
       }`}
     >
       {/* Card header */}
-      <div className="flex items-center gap-3 p-4">
+      <div
+        role="button"
+        tabIndex={0}
+        onClick={toggleExpanded}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggleExpanded();
+          }
+        }}
+        className="flex cursor-pointer items-center gap-3 p-4"
+      >
         {/* Expand toggle */}
         <button
-          onClick={() => toggleAgentExpanded(agent.agent_id)}
+          aria-label={isExpanded ? 'Collapse agent' : 'Expand agent'}
+          onClick={(event) => {
+            event.stopPropagation();
+            toggleExpanded();
+          }}
           className="w-5 h-5 flex items-center justify-center text-gray-500 hover:text-gray-300 transition-transform"
           style={{ transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)' }}
         >
@@ -94,7 +110,10 @@ export function AgentCard({ agent }: AgentCardProps) {
 
         {/* Select button for detail panel */}
         <button
-          onClick={() => selectAgent(isSelected ? null : agent.agent_id)}
+          onClick={(event) => {
+            event.stopPropagation();
+            selectAgent(isSelected ? null : agent.agent_id);
+          }}
           className={`px-2 py-1 text-xs rounded transition-colors ${
             isSelected
               ? 'bg-indigo-600 text-white'

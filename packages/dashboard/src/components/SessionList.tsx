@@ -21,7 +21,7 @@ export function SessionList() {
   const { sessions, selectedSessionId, selectSession } = useStore();
 
   return (
-    <div className="h-full overflow-y-auto">
+    <div className="custom-scrollbar h-full overflow-y-auto">
       <div className="p-3 border-b border-gray-700">
         <h2 className="text-sm font-semibold text-gray-300 uppercase tracking-wide">
           Sessions ({sessions.length})

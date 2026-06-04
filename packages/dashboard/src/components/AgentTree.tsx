@@ -39,7 +39,7 @@ export function AgentTree({ sessionId }: AgentTreeProps) {
   const sessionSummary = getSessionSummary(session);
 
   return (
-    <div className="flex-1 overflow-y-auto p-4">
+    <div className="custom-scrollbar flex-1 overflow-y-auto p-4">
       {/* Session header */}
       <div className="mb-6 pb-4 border-b border-gray-800">
         <div className="flex items-center justify-between mb-2">
