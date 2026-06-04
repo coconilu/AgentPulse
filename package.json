@@ -10,6 +10,7 @@
     "dev:dashboard": "pnpm --filter @agentpulse/dashboard run dev",
     "build": "pnpm -r run build",
     "build:hook": "pnpm --filter @agentpulse/hook run build",
+    "install:hook": "pnpm --filter @agentpulse/hook run install-hook",
     "test": "pnpm -r run test:unit",
     "test:unit": "pnpm -r run test:unit",
     "test:integration": "pnpm --filter @agentpulse/server run test:integration",
