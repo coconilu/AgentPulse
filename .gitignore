@@ -16,3 +16,4 @@ test-results/
 # Build artifacts
 *.tgz
 *.d.ts
+!packages/dashboard/src/vite-env.d.ts

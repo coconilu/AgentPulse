@@ -13,7 +13,10 @@ export function useWebSocket() {
   useEffect(() => {
     function connect() {
       const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-      const wsUrl = `${protocol}//${window.location.host}/ws`;
+      const host = import.meta.env.DEV
+        ? `${window.location.hostname}:7888`
+        : window.location.host;
+      const wsUrl = import.meta.env.VITE_AGENTPULSE_WS_URL ?? `${protocol}//${host}/ws`;
 
       const ws = new WebSocket(wsUrl);
       wsRef.current = ws;
